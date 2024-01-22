@@ -57,8 +57,8 @@ if upload_file is not None :
     streamlit.write("Resume Uploaded Succesfully!!")
     
 Resume_summerise_button = streamlit.button("Tell me About the Resume")
-#Improve_Skills_button   = st.button("How can I Improve My skills")
-Match_Score_button      = st.button("Tell me about percentage Match")
+#Improve_Skills_button   = streamlit.button("How can I Improve My skills")
+Match_Score_button      = streamlit.button("Tell me about percentage Match")
 
 resume_summerise_prompt = """
  You are an experienced Technical Human Resource Manager,your task is to review the provided resume against the job description. 
