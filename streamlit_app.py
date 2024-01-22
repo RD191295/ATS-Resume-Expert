@@ -58,7 +58,7 @@ if upload_file is not None :
     
 Resume_summerise_button = streamlit.button("Tell me About the Resume")
 #Improve_Skills_button   = st.button("How can I Improve My skills")
-#Match_Score_button      = st.button("Tell me about percentage Match")
+Match_Score_button      = st.button("Tell me about percentage Match")
 
 resume_summerise_prompt = """
  You are an experienced Technical Human Resource Manager,your task is to review the provided resume against the job description. 
@@ -76,6 +76,15 @@ if Resume_summerise_button:
     if upload_file is not None:
         pdf_content = input_pdf_setup(upload_file)
         response = get_gemini_response(resume_summerise_prompt,pdf_content,job_description_text)
+        streamlit.subheader("The Response is")
+        streamlit.write(response)
+    else:
+        streamlit.write("Please upload the resume")
+
+if Match_Score_button:
+    if upload_file is not None:
+        pdf_content = input_pdf_setup(upload_file)
+        response = get_gemini_response(match_Score_prompt,pdf_content,job_description_text)
         streamlit.subheader("The Response is")
         streamlit.write(response)
     else:
